@@ -1,3 +1,10 @@
 {
-    "name" : "test"
-}
+    "manifest_version": 3,
+    "name": "Devinci beautiful",
+    "version": "1.0.0",
+    "description": "make a schedule pretty",
+    "icons": {
+      "48": "images/crocodile_team-48.jpeg",
+      "128": "images/icon-128.png"
+    }
+  }
