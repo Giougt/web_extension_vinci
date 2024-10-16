@@ -5,7 +5,7 @@
     "description": "make a schedule pretty",
     "icons": {
       "48": "images/crocodile_team-48.jpeg",
-      "128": "images/icon-128.png"
+      "128": "images/crocodile_team-128.png"
     },
     "content_scripts": [
       {
