@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h3 id="setting"> Setting :</h3>
+    <div id="content_change"> 
+        <div> 
+            <label for="text_color"> text color: </label>
+            <input type="color" id="text_color" value="#ff0000">
+        </div>
+        <div> 
+            <label for="background_color_class">class color: </label>
+            <input type="color" id="background_color_class" value="#ff0000">
+        </div>
+        <div> 
+            <label for="background_color"> background color: </label>
+            <input type="color" id="background_color" value="#ff0000">
+        </div>
+        <button type="submit"> Validate </button>
+    </div>
     <script src="content-script.js"></script>
 </body>
 </html>

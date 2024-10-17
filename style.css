@@ -1,0 +1,22 @@
+#content_change{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    margin-left: 30px;
+    margin-bottom: 17px;
+}
+#setting{
+    text-decoration: underline;
+}
+button {
+    background-color: #6200ea; 
+    color: white; 
+    border: none; 
+    padding: 15px 30px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+}

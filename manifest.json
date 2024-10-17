@@ -16,5 +16,9 @@
           "https://www.leonard-de-vinci.net/"
         ]
       }
-    ]
+    ],
+    "side_panel": {
+    "default_path": "main.html"
+  },
+  "permissions": ["sidePanel"]
   }
