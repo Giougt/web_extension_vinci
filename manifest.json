@@ -13,7 +13,8 @@
           "content-script.js"
         ],
         "matches": [
-          "https://www.leonard-de-vinci.net/"
+          "https://www.leonard-de-vinci.net/",
+          "https://www.leonard-de-vinci.net/?my=edt"
         ]
       }
     ],
