@@ -19,9 +19,21 @@ document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget
 });
 
 });
-let boutonExtension = document.createElement("button");
-boutonExtension.innerText = "Mon bouton d'extension";
-boutonExtension.style.top = "100px";
-boutonExtension.style.marginLeft = "690px";
-boutonExtension.style.zIndex = "1000";
-document.querySelector(".breadcrumb.no_margin").appendChild(boutonExtension);
+const buttonE = document.createElement("button");
+buttonE.innerText = ">/";
+
+Object.assign(buttonE.style, {
+    top: "100px",
+    marginLeft: "760px",
+    backgroundColor: "#333", // Fond sombre (gris foncé)
+    border: "2px solid #555", // Bordure gris clair
+    color: "#fff", // Texte blanc pour contraste
+    borderRadius: "35px", // Bouton arrondi
+    padding: "2px 40px", // Taille du bouton
+    fontSize: "16px", // Taille du texte
+    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)", // Ombre subtile
+    zIndex: "1000",
+});
+
+
+document.querySelector(".breadcrumb.no_margin").appendChild(buttonE);
