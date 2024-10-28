@@ -1,39 +1,13 @@
 //get value color text 
 
 //get value color background day schedule 
-buttonE.document.addEventListener("click", function(){
-    const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
-    text_class_style.forEach(function(element) {
-        element.style.color = "white";
-});
 
-    const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
-    background_class_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
-});
+//active button dark_mode 
 
-    const background_extra_style = document.querySelectorAll(".b-cal-event");
-    background_extra_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
-});
-})
 
+//color other day with the same color
 document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",function(){
-    const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
-    text_class_style.forEach(function(element) {
-        element.style.color = "white";
-});
-
-    const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
-    background_class_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
-});
-
-    const background_extra_style = document.querySelectorAll(".b-cal-event");
-    background_extra_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
-});
-
+    console.log("hello");
 });
 
 //button dark_mode 
@@ -53,5 +27,27 @@ Object.assign(buttonE.style, {
     zIndex: "1000",
 });
 
-
 document.querySelector(".breadcrumb.no_margin").appendChild(buttonE);
+
+//active button dark_mode 
+buttonE.addEventListener("click", function(){
+    dark_mode_style();
+});
+
+
+function dark_mode_style() {
+    const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
+    text_class_style.forEach(function(element) {
+        element.style.color = "white";
+});
+
+    const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
+    background_class_style.forEach(function(element) {
+        element.style.backgroundColor = "black";
+});
+
+    const background_extra_style = document.querySelectorAll(".b-cal-event");
+    background_extra_style.forEach(function(element) {
+        element.style.backgroundColor = "black";
+});
+}
