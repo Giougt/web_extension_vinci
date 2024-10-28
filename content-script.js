@@ -30,8 +30,18 @@ Object.assign(buttonE.style, {
 document.querySelector(".breadcrumb.no_margin").appendChild(buttonE);
 
 //active button dark_mode 
-buttonE.addEventListener("click", function(){
-    dark_mode_style();
+let statut = 1; 
+buttonE.addEventListener("click", function() {
+    if (statut === 1) {
+        dark_mode_style();
+        statut = 0;
+    } else {
+        const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
+        background_class_style.forEach(function(element) {
+            element.style.backgroundColor = "orange";
+});
+        statut = 1;
+    }
 });
 
 
