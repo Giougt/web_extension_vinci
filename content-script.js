@@ -5,9 +5,9 @@
 //active button dark_mode 
 
 
-//color other day with the same color
+//color other day with the same color of active color style 
 document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",function(){
-    console.log("hello");
+    
 });
 
 //button dark_mode 
@@ -36,28 +36,36 @@ buttonE.addEventListener("click", function() {
         dark_mode_style();
         statut = 0;
     } else {
-        const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
-        background_class_style.forEach(function(element) {
-            element.style.backgroundColor = "orange";
-});
+        dark_mode_style("default");
         statut = 1;
     }
 });
 
-
-function dark_mode_style() {
+function dark_mode_style(state) {
     const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
     text_class_style.forEach(function(element) {
-        element.style.color = "white";
+        if (state === "default"){
+            element.style.color = ""; 
+        }else{
+            element.style.color = "white"; 
+        }
 });
 
     const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
     background_class_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
+        if (state === "default"){
+            element.style.backgroundColor = "";
+        }else{
+            element.style.backgroundColor = "black";
+        }
 });
 
     const background_extra_style = document.querySelectorAll(".b-cal-event");
     background_extra_style.forEach(function(element) {
-        element.style.backgroundColor = "black";
+        if (state === "default"){
+            element.style.backgroundColor = "";
+        }else{
+            element.style.backgroundColor = "black";
+        }
 });
 }
