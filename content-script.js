@@ -1,7 +1,22 @@
 //get value color text 
+document.addEventListener('DOMContentLoaded', function() {
+const color_text = document.getElementById('text_color').value;
+
+//get value color class 
+const color_class = document.getElementById('background_color_class').value;
 
 //get value color background day schedule 
+const color_back = document.getElementById('background_color').value;
 
+//button color for send color 
+const getColorButton = document.getElementById('validate_color');
+getColorButton.addEventListener("click",function(){
+    let background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
+    background_class_style.forEach(function(element) {
+            element.style.backgroundColor = color_back;
+})
+});
+});
 //active button dark_mode 
 
 
