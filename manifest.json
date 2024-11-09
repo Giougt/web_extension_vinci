@@ -19,7 +19,10 @@
       }
     ],
     "side_panel": {
-    "default_path": "/popup/popup.html"
+    "default_path": "/popup/popup.html",
+    "action": {
+      "default_title": "Click to open panel"
+  }
   },
   "permissions": ["sidePanel"]
   }
