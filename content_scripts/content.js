@@ -1,4 +1,4 @@
-//import data from paneltab 
+//field who change color 
 
 //button dark_mode 
 const buttonE = document.createElement("button");
@@ -103,12 +103,13 @@ Object.assign(input_backgroundclass,{
 Object.assign(button_send,{
     id: "validate_color",
     type: "button",
+    innerText: "apply"
 }); 
 
 //asign style here 
 const input_style = {
-    fontSize: "2px 40px",
-    backgroundColor: "#E06009"
+    width: "70px",      
+    height: "35px",
 }
 
 Object.assign(button_send.style,{
@@ -141,4 +142,5 @@ document.getElementById("validate_color").addEventListener('click', function () 
     console.log("Couleur du texte :", valueText);
     console.log("Couleur de fond jour :", valueBackgroundDay);
     console.log("Couleur de fond classe :", valueBackgroundClass);
+
 });
