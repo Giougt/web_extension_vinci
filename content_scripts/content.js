@@ -1,5 +1,8 @@
 //field who change color 
-
+const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
+const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
+const background_extra_style = document.querySelectorAll(".b-cal-event");
+const background_day_back_style = document.querySelectorAll(".b-dayview-day-content .b-widget-scroller .b-resize-monitored .b-vertical-overflow");
 //button dark_mode 
 const buttonE = document.createElement("button");
 buttonE.innerText = "dark";
@@ -33,39 +36,34 @@ document.querySelector(".breadcrumb.no_margin").appendChild(buttonE);
 let statut = 1; 
 buttonE.addEventListener("click", function() {
     if (statut === 1) {
-        dark_mode_style();
+        dark_mode_style("",text_class_style,background_class_style,background_extra_style);
         Object.assign(buttonE.style,light_button);
         buttonE.innerText = "light";
         statut = 0;
     } else {
-        dark_mode_style("default");
+        dark_mode_style("default",text_class_style,background_class_style,background_extra_style);
         Object.assign(buttonE.style,dark_mode);
         buttonE.innerText = "dark";
         statut = 1;
     }
 });
 
-function dark_mode_style(state) {
-    const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
-    text_class_style.forEach(function(element) {
+function dark_mode_style(state,targetText, targetClass, targetExtra) {
+    targetText.forEach(function(element) {
         if (state === "default"){
             element.style.color = "black"; 
         }else{
             element.style.color = "white"; 
         }
 });
-
-    const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
-    background_class_style.forEach(function(element) {
+    targetClass.forEach(function(element) {
         if (state === "default"){
             element.style.backgroundColor = "rgb(241,248,253)";
         }else{
             element.style.backgroundColor = "black";
         }
 });
-
-    const background_extra_style = document.querySelectorAll(".b-cal-event");
-    background_extra_style.forEach(function(element) {
+    targetExtra.forEach(function(element) {
         if (state === "default"){
             element.style.backgroundColor = "rgb(109,183,236)";
         }else{
@@ -142,5 +140,15 @@ document.getElementById("validate_color").addEventListener('click', function () 
     console.log("Couleur du texte :", valueText);
     console.log("Couleur de fond jour :", valueBackgroundDay);
     console.log("Couleur de fond classe :", valueBackgroundClass);
-
+    // change color text 
+    text_class_style.forEach(function(element) {
+        element.style.color = valueText;
+    });
+    background_class_style.forEach(function(element) {
+        element.style.backgroundColor =  valueBackgroundDay;
+    });
+    //bug? because doesn't exit background style before 
+    background_day_back_style.forEach(function(element) {
+        element.style.backgroundColor = valueBackgroundClass;
+    });
 });
