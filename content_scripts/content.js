@@ -1,6 +1,5 @@
 //import data from paneltab 
-import {get_Data} from "/extension_web_devinci/content_scripts/PanelTab.js";
-const get = get_Data(); 
+
 //button dark_mode 
 const buttonE = document.createElement("button");
 buttonE.innerText = "dark";
@@ -75,5 +74,16 @@ function dark_mode_style(state) {
 });
 }
 
-//test import data 
-console.log(get.value_text); 
+
+//bug 
+chrome.sidePanel.document.getElementById("validate_color").addEventListener('click', async function () {
+
+    const valueText = await document.getElementById("text_color").value;
+    const valueBackgroundDay = await document.getElementById("background_color").value;
+    const valueBackgroundClass = await document.getElementById("background_color_class").value;
+
+
+    console.log("Couleur du texte :", valueText);
+    console.log("Couleur de fond jour :", valueBackgroundDay);
+    console.log("Couleur de fond classe :", valueBackgroundClass);
+});
