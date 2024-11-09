@@ -1,6 +1,6 @@
 //import data from paneltab 
-import { get_data } from "./PanelTab";
-
+import {get_Data} from "/extension_web_devinci/content_scripts/PanelTab.js";
+const get = get_Data(); 
 //button dark_mode 
 const buttonE = document.createElement("button");
 buttonE.innerText = "dark";
@@ -74,3 +74,6 @@ function dark_mode_style(state) {
         }
 });
 }
+
+//test import data 
+console.log(get.value_text); 
