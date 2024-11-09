@@ -4,13 +4,13 @@
     "version": "1.0.0",
     "description": "make a schedule pretty",
     "icons": {
-      "48": "images/crocodile_team-48.png",
-      "128": "images/crocodile_team-128.png"
+      "48": "icons/crocodile_team-48.png",
+      "128": "icons/crocodile_team-128.png"
     },
     "content_scripts": [
       {
         "js": [
-          "content-script.js"
+          "/content_scripts/content.js"
         ],
         "matches": [
           "https://www.leonard-de-vinci.net/",
@@ -19,7 +19,7 @@
       }
     ],
     "side_panel": {
-    "default_path": "main.html"
+    "default_path": "/popup/popup.html"
   },
   "permissions": ["sidePanel"]
   }
