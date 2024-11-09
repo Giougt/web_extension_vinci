@@ -74,15 +74,70 @@ function dark_mode_style(state) {
 });
 }
 
+//    part button get // 
 
-//bug 
-chrome.sidePanel.document.getElementById("validate_color").addEventListener('click', async function () {
-
-    const valueText = await document.getElementById("text_color").value;
-    const valueBackgroundDay = await document.getElementById("background_color").value;
-    const valueBackgroundClass = await document.getElementById("background_color_class").value;
+const input_text = document.createElement("input"); 
+const input_colorbackday = document.createElement("input"); 
+const input_backgroundclass = document.createElement("input"); 
+const button_send = document.createElement("button"); 
 
 
+Object.assign(input_text,{
+    id: "text_color",
+    type: "color",
+    value: "#000000"
+});
+
+Object.assign(input_colorbackday,{
+    id: "background_color",
+    type: "color",
+    value: "#000000"
+});
+
+Object.assign(input_backgroundclass,{
+    id: "background_color_class",
+    type: "color",
+    value: "#000000",
+});
+
+Object.assign(button_send,{
+    id: "validate_color",
+    type: "button",
+}); 
+
+//asign style here 
+const input_style = {
+    fontSize: "2px 40px",
+    backgroundColor: "#E06009"
+}
+
+Object.assign(button_send.style,{
+    backgroundColor: "#6200ea", 
+    color: "white",
+    border: "none",
+    padding: "15px 40px",
+    fontSize: "16px", 
+    borderRadius: "15px",
+    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)", 
+    transition: "all 0.3s ease",
+    cursor: "pointer"
+});
+
+Object.assign(input_text.style,input_style);
+Object.assign(input_colorbackday.style,input_style);
+Object.assign(input_backgroundclass.style,input_style);
+
+document.querySelector(".breadcrumb.no_margin").appendChild(input_text);
+document.querySelector(".breadcrumb.no_margin").appendChild(input_colorbackday);
+document.querySelector(".breadcrumb.no_margin").appendChild(input_backgroundclass);
+document.querySelector(".breadcrumb.no_margin").appendChild(button_send);
+
+
+//new approach 
+document.getElementById("validate_color").addEventListener('click', function () {
+    const valueText =  document.getElementById("text_color").value;
+    const valueBackgroundDay =  document.getElementById("background_color").value;
+    const valueBackgroundClass =  document.getElementById("background_color_class").value;
     console.log("Couleur du texte :", valueText);
     console.log("Couleur de fond jour :", valueBackgroundDay);
     console.log("Couleur de fond classe :", valueBackgroundClass);
