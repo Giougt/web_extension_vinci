@@ -134,6 +134,7 @@ document.querySelector(".breadcrumb.no_margin").appendChild(button_send);
 
 //new approach 
 document.getElementById("validate_color").addEventListener('click', function () {
+    let check_dark = 0; 
     const valueText =  document.getElementById("text_color").value;
     const valueBackgroundDay =  document.getElementById("background_color").value;
     const valueBackgroundClass =  document.getElementById("background_color_class").value;
@@ -144,10 +145,16 @@ document.getElementById("validate_color").addEventListener('click', function () 
     text_class_style.forEach(function(element) {
         element.style.color = valueText;
     });
-    background_class_style.forEach(function(element) {
-        element.style.backgroundColor =  valueBackgroundDay;
+    if (valueBackgroundDay === "#000000"){
+        alert("essayer le button dark mode");
+        check_dark = 1; 
+    }
+    if (check_dark !== 1){
+        background_class_style.forEach(function(element) {
+            element.style.backgroundColor =  valueBackgroundDay;
     });
-    //bug? because doesn't exit background style before 
+    }
+    //bug? because doesn't exit background style before
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = valueBackgroundClass;
     });
