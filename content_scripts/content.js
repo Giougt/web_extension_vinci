@@ -71,6 +71,9 @@ function dark_mode_style(state,targetText, targetClass, targetExtra) {
             element.style.backgroundColor = "black";
         }
 });
+    background_day_back_style.forEach(function(element) {
+        element.style.backgroundColor = "#ffffff";
+});
 }
 
 //    part button get // 
@@ -155,7 +158,6 @@ document.getElementById("validate_color").addEventListener('click', function () 
             element.style.backgroundColor =  valueBackgroundDay;
     });
     }
-    //bug? because doesn't exit background style before
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = valueBackgroundClass;
     });
