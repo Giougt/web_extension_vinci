@@ -2,7 +2,8 @@
 const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
 const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
 const background_extra_style = document.querySelectorAll(".b-cal-event");
-const background_day_back_style = document.querySelectorAll(".b-dayview-day-content .b-widget-scroller .b-resize-monitored .b-vertical-overflow");
+const background_day_back_style = document.querySelectorAll(".b-daycellcollecter .b-dayview-content");
+
 //button dark_mode 
 const buttonE = document.createElement("button");
 buttonE.innerText = "dark";
@@ -158,4 +159,4 @@ document.getElementById("validate_color").addEventListener('click', function () 
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = valueBackgroundClass;
     });
-});
+})

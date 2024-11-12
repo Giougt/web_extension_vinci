@@ -1,25 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "Devinci beautiful",
-    "version": "1.0.0",
-    "description": "make a schedule pretty",
-    "icons": {
-      "48": "icons/crocodile_team-48.png",
-      "128": "icons/crocodile_team-128.png"
-    },
-    "content_scripts": [
-      {
-        "js": [
-          "/content_scripts/content.js"
-        ],
-        "matches": [
-          "https://www.leonard-de-vinci.net/",
-          "https://www.leonard-de-vinci.net/?my=edt"
-        ]
-      }
-    ],
-    "side_panel": {
-    "default_path": "/popup/popup.html"
+  "manifest_version": 3,
+  "name": "Devinci beautiful",
+  "version": "1.0.0",
+  "description": "make a schedule pretty",
+  "icons": {
+    "48": "icons/crocodile_team-48.png",
+    "128": "icons/crocodile_team-128.png"
   },
-  "permissions": ["sidePanel"]
-  }
+  "content_scripts": [
+    {
+      "js": [
+        "/content_scripts/content.js"
+      ],
+      "matches": [
+        "https://www.leonard-de-vinci.net/",
+        "https://www.leonard-de-vinci.net/?my=edt"
+      ]
+    }
+  ],
+  "side_panel": {
+  "default_path": "/popup/popup.html"
+},
+"permissions": ["sidePanel"]
+}
