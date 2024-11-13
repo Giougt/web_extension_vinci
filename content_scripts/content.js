@@ -74,6 +74,17 @@ function dark_mode_style(state,targetText, targetClass, targetExtra) {
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = "#ffffff";
 });
+// new style dark_mode 
+    const test = document.querySelectorAll(".body");
+        test.forEach(function(element) {
+            if (state === "default"){
+                element.style.backgroundColor = "";
+                element.style.color = "";
+            }else{
+                element.style.backgroundColor = "#000000";
+                element.style.color = "#ffffff"
+            }
+        });
 }
 
 //    part button get // 
@@ -165,7 +176,3 @@ document.getElementById("validate_color").addEventListener('click', function () 
         element.style.backgroundColor = valueBackgroundClass;
     });
 })
-
-document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",function(){
-    console.log("test catch "); 
-}); 
