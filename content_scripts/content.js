@@ -157,8 +157,15 @@ document.getElementById("validate_color").addEventListener('click', function () 
         background_class_style.forEach(function(element) {
             element.style.backgroundColor =  valueBackgroundDay;
     });
+        background_extra_style.forEach(function(element){
+            element.style.backgroundColor = valueBackgroundDay; 
+    })
     }
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = valueBackgroundClass;
     });
 })
+
+document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",function(){
+    console.log("test catch "); 
+}); 
