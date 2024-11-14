@@ -1,3 +1,5 @@
+import {colorTextpy , colorClasspy , colorBackgroundpy} from "backend/settings.py"; 
+
 //field who change color 
 const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
 const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
@@ -176,3 +178,8 @@ document.getElementById("validate_color").addEventListener('click', function () 
         element.style.backgroundColor = valueBackgroundClass;
     });
 })
+
+// save change color redirect to python 
+console.log(colorTextpy);
+console.log(colorClasspy);
+console.log(colorBackgroundpy);
