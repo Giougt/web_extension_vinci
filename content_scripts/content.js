@@ -1,4 +1,3 @@
-import {colorTextpy , colorClasspy , colorBackgroundpy} from "backend/settings.py"; 
 
 //field who change color 
 const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
@@ -150,36 +149,38 @@ document.querySelector(".breadcrumb.no_margin").appendChild(button_send);
 
 
 //new approach 
-document.getElementById("validate_color").addEventListener('click', function () {
-    let check_dark = 0; 
-    const valueText =  document.getElementById("text_color").value;
-    const valueBackgroundDay =  document.getElementById("background_color").value;
-    const valueBackgroundClass =  document.getElementById("background_color_class").value;
-    console.log("Couleur du texte :", valueText);
-    console.log("Couleur de fond jour :", valueBackgroundDay);
-    console.log("Couleur de fond classe :", valueBackgroundClass);
-    // change color text 
-    text_class_style.forEach(function(element) {
-        element.style.color = valueText;
-    });
-    if (valueBackgroundDay === "#000000"){
-        alert("essayer le button dark mode");
-        check_dark = 1; 
-    }
-    if (check_dark !== 1){
-        background_class_style.forEach(function(element) {
-            element.style.backgroundColor =  valueBackgroundDay;
-    });
-        background_extra_style.forEach(function(element){
-            element.style.backgroundColor = valueBackgroundDay; 
-    })
-    }
-    background_day_back_style.forEach(function(element) {
-        element.style.backgroundColor = valueBackgroundClass;
-    });
-})
+document.getElementById("validate_color").addEventListener('click', sendColor);
 
-// save change color redirect to python 
-console.log(colorTextpy);
-console.log(colorClasspy);
-console.log(colorBackgroundpy);
+//get all day all week
+// bug document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",sendColor);
+
+function sendColor() {
+    setTimeout(() => {
+        let check_dark = 0; 
+        let valueText =  document.getElementById("text_color").value;
+        let valueBackgroundDay =  document.getElementById("background_color").value;
+        let valueBackgroundClass =  document.getElementById("background_color_class").value;
+        console.log("Couleur du texte :", valueText);
+        console.log("Couleur de fond jour :", valueBackgroundDay);
+        console.log("Couleur de fond classe :", valueBackgroundClass);
+        // change color text 
+        text_class_style.forEach(function(element) {
+            element.style.color = valueText;
+        });
+        if (valueBackgroundDay === "#000000"){
+            alert("essayer le button dark mode");
+            check_dark = 1; 
+        }
+        if (check_dark !== 1){
+            background_class_style.forEach(function(element) {
+                element.style.backgroundColor =  valueBackgroundDay;
+        });
+            background_extra_style.forEach(function(element){
+                element.style.backgroundColor = valueBackgroundDay; 
+        })
+        }
+        background_day_back_style.forEach(function(element) {
+            element.style.backgroundColor = valueBackgroundClass;
+        });
+    }, 2000);
+}
