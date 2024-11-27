@@ -1,5 +1,4 @@
 
-
 //field who change color 
 const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
 const background_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event-body");
@@ -150,7 +149,12 @@ document.querySelector(".breadcrumb.no_margin").appendChild(button_send);
 
 
 //new approach 
-document.getElementById("validate_color").addEventListener('click', function () {
+document.getElementById("validate_color").addEventListener('click', sendColor);
+
+//get all day all week
+document.querySelector(".b-panel-content.b-sidebar-content.b-box-center.b-widget-scroller.b-resize-monitored.b-content-element.b-auto-container.b-flex-column").addEventListener("click",sendColor);
+
+function sendColor() {
     let check_dark = 0; 
     const valueText =  document.getElementById("text_color").value;
     const valueBackgroundDay =  document.getElementById("background_color").value;
@@ -177,5 +181,4 @@ document.getElementById("validate_color").addEventListener('click', function () 
     background_day_back_style.forEach(function(element) {
         element.style.backgroundColor = valueBackgroundClass;
     });
-})
-
+}
