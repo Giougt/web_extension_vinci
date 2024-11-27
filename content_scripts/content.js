@@ -1,4 +1,4 @@
-import {colorTextpy , colorClasspy , colorBackgroundpy} from "backend/settings.py"; 
+//import {colorTextpy , colorClasspy , colorBackgroundpy} from "backend/settings.py"; 
 
 //field who change color 
 const text_class_style = document.querySelectorAll(".b-dayview-day-container .b-calendar-cell .b-cal-event");
@@ -10,11 +10,17 @@ const background_day_back_style = document.querySelectorAll(".b-daycellcollecter
 const buttonE = document.createElement("button");
 buttonE.innerText = "dark";
 
+//settings div
+const settings_section = {
+    width: "75%",
+    backgroundColor: "yellow"
+};
+
 //style dark mode button 
 const dark_mode= {
     top: "100px",
-    marginLeft: "760px",
-    backgroundColor: "#333", // Fond sombre (gris foncé)
+    marginLeft: "1000px",
+    backgroundColor: "red", // Fond sombre (gris foncé)
     border: "2px solid #555", // Bordure gris clair
     color: "#fff", // Texte blanc pour contraste
     borderRadius: "35px", // Bouton arrondi
@@ -118,7 +124,7 @@ Object.assign(input_backgroundclass,{
 Object.assign(button_send,{
     id: "validate_color",
     type: "button",
-    innerText: "apply"
+    innerText: "Apply"
 }); 
 
 //asign style here 
@@ -128,7 +134,8 @@ const input_style = {
 }
 
 Object.assign(button_send.style,{
-    backgroundColor: "#6200ea", 
+    // Apply button
+    backgroundColor: "#000000", 
     color: "white",
     border: "none",
     padding: "15px 40px",
@@ -163,7 +170,7 @@ document.getElementById("validate_color").addEventListener('click', function () 
         element.style.color = valueText;
     });
     if (valueBackgroundDay === "#000000"){
-        alert("essayer le button dark mode");
+        alert("Essayer le button 'Dark Mode'");
         check_dark = 1; 
     }
     if (check_dark !== 1){
@@ -180,6 +187,6 @@ document.getElementById("validate_color").addEventListener('click', function () 
 })
 
 // save change color redirect to python 
-console.log(colorTextpy);
-console.log(colorClasspy);
-console.log(colorBackgroundpy);
+// console.log(colorTextpy);
+// console.log(colorClasspy);
+// console.log(colorBackgroundpy);
