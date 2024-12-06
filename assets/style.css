@@ -17,13 +17,16 @@
     justify-content: space-between;
     font-size: 0.95rem;
 }
+
 input{
     margin-left: 30px;
     margin-bottom: 17px;
 }
+
 #setting{
     text-decoration: underline;
 }
+
 button {
     background-color: #FFF; 
     color: #000; 
@@ -32,6 +35,14 @@ button {
     font-size: 16px; 
     border-radius: 5px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-    transition: all 0.3s ease; 
+    transition: all 0.4s ease; 
     cursor: pointer; 
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button:active {
+    background-color: #aaa;
 }
